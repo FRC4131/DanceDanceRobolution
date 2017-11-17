@@ -26,6 +26,8 @@ public class Mechanum extends Subsystem {
 			haltward();
 		} else if ((up == true && down == true) || (left == true && right == true)) {
 			forward();
+		} else if (up == true) {
+			forward();
 		} else if (down == true) {
 			backward();
 		} else if (left == true) {
@@ -51,16 +53,16 @@ public class Mechanum extends Subsystem {
 		DRIVE4.set(-0.5);
 	}
 	public void leftward() {
-		DRIVE1.set(-0.5);
+		DRIVE1.set(0.5);
 		DRIVE2.set(-0.5);
 		DRIVE3.set(0.5);
-		DRIVE4.set(0.5);
+		DRIVE4.set(-0.5);
 	}
 	public void rightward() {
-		DRIVE1.set(0.5);
+		DRIVE1.set(-0.5);
 		DRIVE2.set(0.5);
 		DRIVE3.set(-0.5);
-		DRIVE4.set(-0.5);
+		DRIVE4.set(0.5);
 	}
 	public void haltward() {
 		DRIVE1.set(0);
